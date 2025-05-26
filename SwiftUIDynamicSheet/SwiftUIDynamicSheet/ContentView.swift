@@ -35,10 +35,14 @@ struct ContentView: View {
             .background(Color.gray.opacity(0.5))
             .cornerRadius(10)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
+        .background(
+            Color.green.opacity(0.3)
+        )
         .dynamicHeightSheet(isPresented: $isPresented) {
             SheetContent(itemCount: itemCount)
+                .presentationDragIndicator(.visible)
         }
     }
 }
